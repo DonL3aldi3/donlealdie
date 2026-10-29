@@ -7,13 +7,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         html { scroll-behavior: smooth; }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-teal-500 selection:text-white">
 
     <!-- Navigation Bar -->
     <nav class="fixed top-0 w-full bg-slate-900/90 backdrop-blur border-b border-slate-800 z-50">
-        <div class="max-w-6xl mx-mx auto px-6 py-4 flex justify-between items-center">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <span class="text-xl font-bold tracking-tight text-white">Don Hemanth Lealdie</span>
             <div class="space-x-6 text-sm font-medium text-slate-300">
                 <a href="#about" class="hover:text-teal-400 transition">About</a>
@@ -25,7 +27,7 @@
     </nav>
 
     <!-- Header / Bio Section -->
-    <header id="about" class="pt-32 pb-20 px-6 max-w-6xl mx-auto">
+    <header id="about" class="pt-32 pb-16 px-6 max-w-6xl mx-auto">
         <div class="inline-block bg-teal-500/10 border border-teal-500/30 rounded-full px-4 py-1 text-teal-400 text-xs font-semibold uppercase tracking-wider mb-6">
             Executive Leadership & Operations Practice Leader
         </div>
@@ -46,7 +48,7 @@
     </header>
 
     <!-- 4 Practice Pillars Section -->
-    <section id="pillars" class="py-20 bg-slate-950 border-t border-slate-800/80">
+    <section id="pillars" class="py-16 bg-slate-950 border-t border-slate-800/80">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-3xl font-bold text-white mb-4">Ground-Up Practice Builds</h2>
             <p class="text-slate-400 mb-12 max-w-2xl">Proven track record of architecting, scaling, and modernizing four enterprise operational practice models from scratch.</p>
@@ -54,59 +56,255 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
                 <!-- Pillar 1 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-xl p-8 hover:border-slate-700 transition">
-                    <div class="text-teal-400 font-mono text-sm mb-2">01. REVENUE OPERATIONS & API MODERNIZATION</div>
-                    <h3 class="text-xl font-bold text-white mb-3">Global Renewal Engine ($20M Pipeline)</h3>
-                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                        Built North American renewal operations from scratch and scaled globally. Led multi-system bi-directional API integration across Salesforce, Dynamics 365, and iAsset under strict C-Suite governance (CFO/CDO) while delivering daily renewal targets.
-                    </p>
-                    <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
-                        <li class="flex items-center">✓ 30% Operational Efficiency Gain & 25% Faster Cycle Times</li>
-                        <li class="flex items-center">✓ 3 FTE Capacity Saved via Bi-Directional Multi-CRM Automation</li>
-                        <li class="flex items-center">✓ 99.99% SOX Compliance & C-Suite AOP Data Leadership</li>
-                    </ul>
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-8 hover:border-slate-700 transition flex flex-col justify-between">
+                    <div>
+                        <div class="text-teal-400 font-mono text-sm mb-2 font-bold">01. REVENUE OPERATIONS & API MODERNIZATION</div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Global Renewal Engine ($20M Pipeline)</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Built North American renewal operations from scratch and scaled globally. Led multi-system bi-directional API integration across Salesforce, Dynamics 365, and iAsset under strict C-Suite governance (CFO/CDO) while delivering daily renewal targets.
+                        </p>
+                        <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4 mb-6">
+                            <li class="flex items-center">✓ 30% Operational Efficiency Gain & 25% Faster Cycle Times</li>
+                            <li class="flex items-center">✓ 3 FTE Capacity Saved via Bi-Directional Multi-CRM Automation</li>
+                            <li class="flex items-center">✓ 99.99% SOX Compliance & C-Suite AOP Data Leadership</li>
+                        </ul>
+                    </div>
+
+                    <!-- Expandable Dropdown -->
+                    <details class="bg-slate-950/80 border border-slate-800 rounded-lg p-4 group">
+                        <summary class="cursor-pointer text-xs font-semibold text-teal-400 flex items-center justify-between select-none">
+                            <span>▶ Deep Dive & Transformation Methodology</span>
+                            <span class="text-slate-500 text-[10px] group-open:rotate-90 transition-transform">▶</span>
+                        </summary>
+                        <div class="mt-4 pt-4 border-t border-slate-800/80 text-xs text-slate-300 space-y-4">
+                            <p class="italic text-slate-400"><strong>Headline Question:</strong> How do you modernise a messy, multi-CRM renewal ecosystem while governing a $20M+ pipeline without missing operational targets?</p>
+                            
+                            <div>
+                                <strong class="text-teal-400 block mb-1">1. The Context & Root Cause ("Why")</strong>
+                                <ul class="list-disc list-inside space-y-1 text-slate-400">
+                                    <li><strong>Disconnected CRM Systems:</strong> Renewal operations were split across Salesforce, Microsoft Dynamics 365, and iAsset, creating severe data mismatch, manual reconciliation errors, and extended deal cycles.</li>
+                                    <li><strong>Operational & Compliance Exposure:</strong> Managing a $20M+ renewal pipeline manually created revenue leakage, billing inaccuracies, and non-compliance risk across enterprise accounts.</li>
+                                    <li><strong>Localized Tracking:</strong> Renewals were handled reactively on a regional basis without standardized SLAs or automated tracking.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <strong class="text-teal-400 block mb-1">2. Strategic Rationale ("Why this approach")</strong>
+                                <ul class="list-disc list-inside space-y-1 text-slate-400">
+                                    <li><strong>NAM-First Proven Blueprint:</strong> Built, battle-tested, and optimized the renewal operating model in North America (NAM) before scaling it globally.</li>
+                                    <li><strong>Bi-Directional API Strategy:</strong> Implemented real-time bi-directional API automation across all 3 CRMs instead of forcing a full platform migration, preserving user adoption while fixing data integrity.</li>
+                                    <li><strong>Dual-Track Execution:</strong> Managed major technical cutovers on strict timelines while keeping live renewal operations running seamlessly to hit daily revenue targets under CFO and CDO governance.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <strong class="text-teal-400 block mb-1">3. Execution & Tooling ("How")</strong>
+                                <ul class="list-disc list-inside space-y-1 text-slate-400">
+                                    <li><strong>Process & Playbook Architecture:</strong> Authored standardized renewal playbooks, SOPs, and RACI matrices in NAM, then adapted and scaled them across global international teams.</li>
+                                    <li><strong>Multi-Stakeholder Governance:</strong> Led vendor implementation teams, secured practice stakeholder sign-offs, and aligned directly with the CFO, CDO, and VP of Sales.</li>
+                                    <li><strong>C-Suite Strategic Input:</strong> Synthesized real-time renewal data to feed critical pipeline analytics into executive Annual Operating Plan (AOP) planning.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <strong class="text-teal-400 block mb-1">4. Quantifiable Business Impact (The Results)</strong>
+                                <ul class="list-disc list-inside space-y-1 text-slate-400">
+                                    <li>30% Operational Efficiency Gain and 25% Reduction in Renewal Cycle Times.</li>
+                                    <li>3 FTE Capacity Saved through automated cross-system data sync.</li>
+                                    <li>99.99% SOX-Aligned Compliance maintained across a $20M+ Global Pipeline.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
                 </div>
 
                 <!-- Pillar 2 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-xl p-8 hover:border-slate-700 transition">
-                    <div class="text-teal-400 font-mono text-sm mb-2">02. MANAGED SERVICES & SERVICE DELIVERY</div>
-                    <h3 class="text-xl font-bold text-white mb-3">24x7 NAM NOC Operational Turnaround</h3>
-                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                        Established a specialized North American Managed Services NOC practice from the ground up to replace underperforming offshore models. Re-engineered SOPs, overhauled Major Incident Management (MIM), and replicated the model globally.
-                    </p>
-                    <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
-                        <li class="flex items-center">✓ Elevated SLA Adherence to 98%+ across 24x7 Operations</li>
-                        <li class="flex items-center">✓ 30% Reduction in Operational Downtime via RCA & CSI</li>
-                        <li class="flex items-center">✓ Rebuilt Low NPS/Detractor Accounts into Benchmark References</li>
-                    </ul>
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-8 hover:border-slate-700 transition flex flex-col justify-between">
+                    <div>
+                        <div class="text-teal-400 font-mono text-sm mb-2 font-bold">02. MANAGED SERVICES & SERVICE DELIVERY</div>
+                        <h3 class="text-2xl font-bold text-white mb-3">24x7 NAM NOC Operational Turnaround</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Established a specialized North American Managed Services NOC practice from the ground up to replace underperforming offshore models. Re-engineered SOPs, overhauled Major Incident Management (MIM), and replicated the model globally.
+                        </p>
+                        <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4 mb-6">
+                            <li class="flex items-center">✓ Elevated SLA Adherence to 98%+ across 24x7 Operations</li>
+                            <li class="flex items-center">✓ 30% Reduction in Operational Downtime via RCA & CSI</li>
+                            <li class="flex items-center">✓ Rebuilt Low NPS/Detractor Accounts into Benchmark References</li>
+                        </ul>
+                    </div>
+
+                    <!-- Expandable Dropdown -->
+                    <details class="bg-slate-950/80 border border-slate-800 rounded-lg p-4 group">
+                        <summary class="cursor-pointer text-xs font-semibold text-teal-400 flex items-center justify-between select-none">
+                            <span>▶ Deep Dive & Transformation Methodology</span>
+                            <span class="text-slate-500 text-[10px] group-open:rotate-90 transition-transform">▶</span>
+                        </summary>
+                        <div class="mt-4 pt-4 border-t border-slate-800/80 text-xs text-slate-300 space-y-4">
+                            <p class="italic text-slate-400"><strong>Headline Question:</strong> How do you turn around a failing offshore delivery model with low NPS into a high-performing 98%+ SLA global benchmark?</p>
+                            
+                            <div>
+                                <strong class="text-teal-400 block mb-1">1. The Context & Root Cause ("Why")</strong>
+                                <ul class="list-disc list-inside space-y-1 text-slate-400">
+                                    <li><strong>Operational Friction in Offshore NOC:</strong> Offshored India NOC teams faced persistent SLA breaches, long MTTR, and cultural/communication gaps in NAM high-severity war rooms.</li>
+                                    <li><strong>Obsolete Procedures:</strong> Existing SOPs were designed for regional specs rather than North American enterprise standards and complex UCaaS/CCaaS architectures.</li>
+                                    <li><strong>High Detractor Risk:</strong> Customer satisfaction hit record lows with severe NPS detractor rates, threatening account churn.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <strong class="text-teal-400 block mb-1">2. Strategic Rationale ("Why this approach")</strong>
+                                <ul class="list-disc list-inside space-y-1 text-slate-400">
+                                    <li><strong>Dedicated NAM Practice:</strong> Built a specialized NAM-focused Managed Services team from scratch to address time-zone alignment, technical expertise, and executive etiquette.</li>
+                                    <li><strong>SOP & Runbook Re-Architecture:</strong> Scrapped outdated India-specced procedures and authored customer-centric, NAM-tailored SOPs and incident playbooks.</li>
+                                    <li><strong>Global Replication Blueprint:</strong> Standardized operational improvements in NAM first so the model could be scaled cleanly across global delivery regions.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <strong class="text-teal-400 block mb-1">3. Execution & Tooling ("How")</strong>
+                                <ul class="list-disc list-inside space-y-1 text-slate-400">
+                                    <li><strong>ITIL & Major Incident Governance:</strong> Overhauled Incident, Problem, and Change Management frameworks for zero-defect major incident war-room handling.</li>
+                                    <li><strong>Etiquette & Communication Standards:</strong> Trained frontline engineers on executive facilitation, structured war-room updates, and proactive RCA delivery.</li>
+                                    <li><strong>Continual Service Improvement (CSI):</strong> Embedded root-cause analysis cadences directly into shift handovers and vendor management workflows.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <strong class="text-teal-400 block mb-1">4. Quantifiable Business Impact (The Results)</strong>
+                                <ul class="list-disc list-inside space-y-1 text-slate-400">
+                                    <li>Elevated SLA Adherence to 98%+ across 24x7 mission-critical operations.</li>
+                                    <li>30% Reduction in Operational Downtime via RCA and CSI implementations.</li>
+                                    <li>Turned Low-NPS Accounts into Stable References and successfully replicated the model globally.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
                 </div>
 
                 <!-- Pillar 3 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-xl p-8 hover:border-slate-700 transition">
-                    <div class="text-teal-400 font-mono text-sm mb-2">03. ENTERPRISE CUSTOMER SUCCESS</div>
-                    <h3 class="text-xl font-bold text-white mb-3">Retention, Playbooks & Expansion Engine</h3>
-                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                        Architected the end-to-end Client Success practice framework across 20+ enterprise accounts. Built onboarding playbooks, objection handling frameworks, and customer health-scoring models to eliminate churn and drive expansion.
-                    </p>
-                    <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
-                        <li class="flex items-center">✓ $250K ARR At-Risk Account Recovery & Turnaround</li>
-                        <li class="flex items-center">✓ $500K GenAI & Cloud Expansion Pipeline Created</li>
-                        <li class="flex items-center">✓ 14+ Years Enterprise Customer-Facing Leadership</li>
-                    </ul>
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-8 hover:border-slate-700 transition flex flex-col justify-between">
+                    <div>
+                        <div class="text-teal-400 font-mono text-sm mb-2 font-bold">03. ENTERPRISE CUSTOMER SUCCESS</div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Retention, Playbooks & Expansion Engine</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Architected the end-to-end Client Success practice framework across 20+ enterprise accounts. Built onboarding playbooks, objection handling frameworks, and customer health-scoring models to eliminate churn and drive expansion.
+                        </p>
+                        <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4 mb-6">
+                            <li class="flex items-center">✓ $250K ARR At-Risk Account Recovery & Turnaround</li>
+                            <li class="flex items-center">✓ $500K GenAI & Cloud Expansion Pipeline Created</li>
+                            <li class="flex items-center">✓ 14+ Years Enterprise Customer-Facing Leadership</li>
+                        </ul>
+                    </div>
+
+                    <!-- Expandable Dropdown -->
+                    <details class="bg-slate-950/80 border border-slate-800 rounded-lg p-4 group">
+                        <summary class="cursor-pointer text-xs font-semibold text-teal-400 flex items-center justify-between select-none">
+                            <span>▶ Deep Dive & Transformation Methodology</span>
+                            <span class="text-slate-500 text-[10px] group-open:rotate-90 transition-transform">▶</span>
+                        </summary>
+                        <div class="mt-4 pt-4 border-t border-slate-800/80 text-xs text-slate-300 space-y-4">
+                            <p class="italic text-slate-400"><strong>Headline Question:</strong> How do you convert reactive customer management into a proactive, churn-mitigating Client Success practice that drives revenue expansion?</p>
+                            
+                            <div>
+                                <strong class="text-teal-400 block mb-1">1. The Context & Root Cause ("Why")</strong>
+                                <ul class="list-disc list-inside space-y-1 text-slate-400">
+                                    <li><strong>Unstructured Account Management:</strong> Account management lacked formal CS playbooks across 20+ enterprise accounts, resulting in reactive firefighting.</li>
+                                    <li><strong>Expansion Bottlenecks:</strong> No structured feedback loops existed between customer adoption signals, Product Engineering, and GTM expansion pipelines.</li>
+                                    <li><strong>High At-Risk ARR:</strong> Lack of standardized objection handling and health scoring exposed high-value enterprise accounts to silent churn.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <strong class="text-teal-400 block mb-1">2. Strategic Rationale ("Why this approach")</strong>
+                                <ul class="list-disc list-inside space-y-1 text-slate-400">
+                                    <li><strong>Formalized Practice Framework:</strong> Translated 14+ years of customer-facing experience into standardized CS Playbooks, objection runbooks, and QBR structures.</li>
+                                    <li><strong>Multidimensional Health Scoring:</strong> Combined usage analytics, KPI tracking, and sentiment signals into an early-warning health model.</li>
+                                    <li><strong>AI-Led Expansion Strategy:</strong> Leveraged GenAI and Agentic AI POC demonstrations to show enterprise clients future-state CX roadmaps and drive upsell.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <strong class="text-teal-400 block mb-1">3. Execution & Tooling ("How")</strong>
+                                <ul class="list-disc list-inside space-y-1 text-slate-400">
+                                    <li><strong>Playbook & Runbook Deployment:</strong> Built onboarding frameworks, time-to-value playbooks, and escalation matrices tailored for enterprise SaaS/CCaaS accounts.</li>
+                                    <li><strong>Executive QBR/EBR Cadence:</strong> Established quarterly governance cadences covering ROI metrics, operational health, and forward-looking CX transformation.</li>
+                                    <li><strong>Cross-Functional Alignment:</strong> Orchestrated Sales, Delivery, and Engineering teams to execute structured account recovery plans.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <strong class="text-teal-400 block mb-1">4. Quantifiable Business Impact (The Results)</strong>
+                                <ul class="list-disc list-inside space-y-1 text-slate-400">
+                                    <li>Retained $250K ARR At-Risk Account via structured risk identification and recovery.</li>
+                                    <li>Built $500K AI & Cloud Expansion Pipeline through GenAI/Agentic AI POC integrations.</li>
+                                    <li>Governed End-to-End CS Operating Model across 20+ enterprise customer accounts.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
                 </div>
 
                 <!-- Pillar 4 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-xl p-8 hover:border-slate-700 transition">
-                    <div class="text-teal-400 font-mono text-sm mb-2">04. MARTECH GTM & NICHE PLATFORM SCALE</div>
-                    <h3 class="text-xl font-bold text-white mb-3">30-Day Advisory Diagnostic & Scale Blueprint</h3>
-                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                        Executed a rapid 30-day operational diagnostic for an early-stage MarTech platform. Designed specialized onboarding playbooks and feedback loops to support scaling user adoption for a niche target audience.
-                    </p>
-                    <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
-                        <li class="flex items-center">✓ Complete Operating Model & Health Diagnostic in 30 Days</li>
-                        <li class="flex items-center">✓ Scale Playbooks Built for 300 to 5,000 Niche Platform Users</li>
-                        <li class="flex items-center">✓ Customer-to-Product Engineering Feedback Alignment</li>
-                    </ul>
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-8 hover:border-slate-700 transition flex flex-col justify-between">
+                    <div>
+                        <div class="text-teal-400 font-mono text-sm mb-2 font-bold">04. MARTECH GTM & NICHE PLATFORM SCALE</div>
+                        <h3 class="text-2xl font-bold text-white mb-3">30-Day Advisory Diagnostic & Scale Blueprint</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Executed a rapid 30-day operational diagnostic for an early-stage MarTech platform. Designed specialized onboarding playbooks and feedback loops to support scaling user adoption for a niche target audience.
+                        </p>
+                        <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4 mb-6">
+                            <li class="flex items-center">✓ Complete Operating Model & Health Diagnostic in 30 Days</li>
+                            <li class="flex items-center">✓ Scale Playbooks Built for 300 to 5,000 Niche Platform Users</li>
+                            <li class="flex items-center">✓ Customer-to-Product Engineering Feedback Alignment</li>
+                        </ul>
+                    </div>
+
+                    <!-- Expandable Dropdown -->
+                    <details class="bg-slate-950/80 border border-slate-800 rounded-lg p-4 group">
+                        <summary class="cursor-pointer text-xs font-semibold text-teal-400 flex items-center justify-between select-none">
+                            <span>▶ Deep Dive & Transformation Methodology</span>
+                            <span class="text-slate-500 text-[10px] group-open:rotate-90 transition-transform">▶</span>
+                        </summary>
+                        <div class="mt-4 pt-4 border-t border-slate-800/80 text-xs text-slate-300 space-y-4">
+                            <p class="italic text-slate-400"><strong>Headline Question:</strong> How do you execute a 30-day operational diagnostic to design scalable adoption playbooks for a specialized MarTech user base?</p>
+                            
+                            <div>
+                                <strong class="text-teal-400 block mb-1">1. The Context & Root Cause ("Why")</strong>
+                                <ul class="list-disc list-inside space-y-1 text-slate-400">
+                                    <li><strong>Rapid Scale Friction:</strong> An early-stage MarTech platform faced operational bottlenecks while scaling user adoption from 300 to 5,000 users.</li>
+                                    <li><strong>Specialized End-Users:</strong> Targeted enterprise marketing and operations power users who required tailored onboarding and workflow support.</li>
+                                    <li><strong>Lack of CS Infrastructure:</strong> The startup environment lacked formal customer feedback mechanisms, retention frameworks, and structured Product-Engineering communication.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <strong class="text-teal-400 block mb-1">2. Strategic Rationale ("Why this approach")</strong>
+                                <ul class="list-disc list-inside space-y-1 text-slate-400">
+                                    <li><strong>Rapid 30-Day Diagnostic Sprint:</strong> Initiated an intensive operational audit to identify onboarding friction, usage gaps, and roadmap priorities within 30 days.</li>
+                                    <li><strong>Targeted Playbook Design:</strong> Authored bespoke onboarding and retention playbooks built specifically around specialized MarTech user workflows.</li>
+                                    <li><strong>Product-CS Integration:</strong> Positioned CS as the strategic voice of the customer, feeding adoption signals directly back to Product and Engineering teams.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <strong class="text-teal-400 block mb-1">3. Execution & Tooling ("How")</strong>
+                                <ul class="list-disc list-inside space-y-1 text-slate-400">
+                                    <li><strong>User Journey Mapping:</strong> Mapped end-to-end user touchpoints to eliminate onboarding friction for marketing stakeholders.</li>
+                                    <li><strong>Feedback Loop Architecture:</strong> Established formal mechanisms connecting customer usage insights to prioritized roadmap items.</li>
+                                    <li><strong>Actionable Roadmap Delivery:</strong> Formulated executive action plans to align leadership on GTM scale readiness prior to corporate project restructuring.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <strong class="text-teal-400 block mb-1">4. Quantifiable Business Impact (The Results)</strong>
+                                <ul class="list-disc list-inside space-y-1 text-slate-400">
+                                    <li>Delivered Complete CS Operating Blueprint and health diagnostic within 30 days.</li>
+                                    <li>Built Scale Infrastructure supporting user adoption growth from 300 to 5,000 niche platform users.</li>
+                                    <li>Created Alignment between executive leadership, Product, and client-facing teams.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
                 </div>
 
             </div>
@@ -114,12 +312,12 @@
     </section>
 
     <!-- Technical & Methodology Stack -->
-    <section id="stack" class="py-20 max-w-6xl mx-auto px-6">
+    <section id="stack" class="py-16 max-w-6xl mx-auto px-6">
         <h2 class="text-3xl font-bold text-white mb-12">Methodology & Enterprise Tooling Stack</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
             
             <div class="bg-slate-900/50 p-6 rounded-lg border border-slate-800">
-                <h4 class="font-bold text-teal-400 mb-3">Process Excellence</h4>
+                <h4 class="font-bold text-teal-400 mb-3">Process Excellence & Governance</h4>
                 <p class="text-slate-300 leading-relaxed">Lean Six Sigma (DMAIC/DMADV), ITIL v3 ITSM Governance, Continual Service Improvement (CSI), Root Cause Analysis (RCA), SOX Process Compliance, RACI Frameworks.</p>
             </div>
 
@@ -144,7 +342,7 @@
             <div class="flex justify-center space-x-6">
                 <a href="https://linkedin.com/in/don-lealdie" target="_blank" class="text-teal-400 hover:underline">LinkedIn Profile</a>
                 <span class="text-slate-600">|</span>
-                <span>spheman@live.com</span>
+                <a href="mailto:spheman@live.com" class="text-teal-400 hover:underline">spheman@live.com</a>
                 <span class="text-slate-600">|</span>
                 <span>Chennai, India</span>
             </div>
